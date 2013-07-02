@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.peergreen.webconsole</groupId>
+    <artifactId>webconsole-pom</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+  <artifactId>home-scope</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <name>Peergreen Web Console :: Home Scope and its related Extensions</name>
+  <packaging>bundle</packaging>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.peergreen.webconsole</groupId>
+      <artifactId>web-console-api</artifactId>
+      <version>1.0.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>com.vaadin</groupId>
+      <artifactId>vaadin-server</artifactId>
+      <version>${vaadin.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.peergreen.newsfeed</groupId>
+      <artifactId>peergreen-newsfeed</artifactId>
+      <version>1.0.1</version>
+    </dependency>
+  </dependencies>
+
+</project>
