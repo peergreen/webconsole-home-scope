@@ -92,6 +92,22 @@ public class FrameView extends VerticalLayout {
         }
     }
 
+    protected Button getNextButton() {
+        return next;
+    }
+
+    protected Button getPreviousButton() {
+        return previous;
+    }
+
+    protected int getFrameState() {
+        return state;
+    }
+
+    protected List<Component> getComponents() {
+        return components;
+    }
+
     public class NextButtonClickListener implements Button.ClickListener {
 
         @Override
