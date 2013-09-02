@@ -8,19 +8,15 @@ import com.peergreen.webconsole.Extension;
 import com.peergreen.webconsole.ExtensionPoint;
 import com.peergreen.webconsole.Inject;
 import com.peergreen.webconsole.Ready;
-
 import com.peergreen.webconsole.scope.home.Frame;
-import com.vaadin.event.ShortcutAction;
+import com.peergreen.webconsole.vaadin.DefaultWindow;
 import com.vaadin.shared.ui.label.ContentMode;
-import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.FormLayout;
-import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.NativeButton;
 import com.vaadin.ui.Table;
 import com.vaadin.ui.UI;
-import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Window;
 
 import java.net.MalformedURLException;
@@ -76,30 +72,10 @@ public class PeergreenNewsFeedFrame extends Table {
      * @return
      */
     private Window getNewsDescription(FeedMessage feedMessage) {
-        final Window w = new Window();
-        VerticalLayout l = new VerticalLayout();
-        l.setSpacing(true);
-
-        w.setCaption(feedMessage.getTitle());
-        w.setContent(l);
-        w.center();
-        w.setCloseShortcut(ShortcutAction.KeyCode.ESCAPE, null);
-        w.setResizable(false);
-        w.setClosable(false);
-
-        addStyleName("no-vertical-drag-hints");
-        addStyleName("no-horizontal-drag-hints");
-
-        HorizontalLayout details = new HorizontalLayout();
-        details.setSpacing(true);
-        details.setMargin(true);
-        l.addComponent(details);
-
         FormLayout fields = new FormLayout();
         fields.setWidth("35em");
         fields.setSpacing(true);
         fields.setMargin(true);
-        details.addComponent(fields);
 
         Label label = new Label("<a href=\"" + feedMessage.getLink() + "\">" + feedMessage.getLink().substring(0, 50) + "..." + "</a>");
         label.setContentMode(ContentMode.HTML);
@@ -117,24 +93,18 @@ public class PeergreenNewsFeedFrame extends Table {
         desc.setCaption("Description");
         fields.addComponent(desc);
 
-        HorizontalLayout footer = new HorizontalLayout();
-        footer.addStyleName("footer");
-        footer.setWidth("100%");
-        footer.setMargin(true);
-
         Button ok = new Button("Close");
         ok.addStyleName("wide");
         ok.addStyleName("default");
+
+        final Window w = new DefaultWindow(feedMessage.getTitle(), fields, ok);
+        w.center();
         ok.addClickListener(new Button.ClickListener() {
             @Override
             public void buttonClick(Button.ClickEvent event) {
                 w.close();
             }
         });
-        footer.addComponent(ok);
-        footer.setComponentAlignment(ok, Alignment.TOP_RIGHT);
-        l.addComponent(footer);
-
         return w;
     }
 }
