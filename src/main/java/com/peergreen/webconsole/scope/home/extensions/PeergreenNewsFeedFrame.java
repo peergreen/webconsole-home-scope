@@ -7,7 +7,6 @@ import com.peergreen.newsfeed.RssServiceException;
 import com.peergreen.webconsole.Extension;
 import com.peergreen.webconsole.ExtensionPoint;
 import com.peergreen.webconsole.Inject;
-import com.peergreen.webconsole.Ready;
 import com.peergreen.webconsole.scope.home.Frame;
 import com.peergreen.webconsole.vaadin.DefaultWindow;
 import com.vaadin.shared.ui.label.ContentMode;
@@ -19,6 +18,7 @@ import com.vaadin.ui.Table;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Window;
 
+import javax.annotation.PostConstruct;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -45,7 +45,7 @@ public class PeergreenNewsFeedFrame extends Table {
         setImmediate(true);
     }
 
-    @Ready
+    @PostConstruct
     public void init() throws MalformedURLException, RssServiceException {
         Rss rss = null;
         rss = rssService.parse(new URL(PEERGREEN_RSS_FLOW_URL));
