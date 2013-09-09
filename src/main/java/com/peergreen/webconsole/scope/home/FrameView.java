@@ -74,9 +74,12 @@ public class FrameView extends VerticalLayout {
     }
 
     public void addFrame(Component component, String caption) {
-        if (caption != null) captions.put(component, caption);
-        if (components.size() == 0) setContent(component);
-        else {
+        if (caption != null) {
+            captions.put(component, caption);
+        }
+        if (components.size() == 0) {
+            setContent(component);
+        } else {
             next.setVisible(true);
             previous.setVisible(true);
         }
@@ -84,8 +87,12 @@ public class FrameView extends VerticalLayout {
     }
 
     public void removeFrame(Component component) {
-        if (components.contains(component)) components.remove(component);
-        if (captions.containsKey(component)) captions.remove(component);
+        if (components.contains(component)) {
+            components.remove(component);
+        }
+        if (captions.containsKey(component)) {
+            captions.remove(component);
+        }
         if (components.size() <= 1) {
             next.setVisible(false);
             previous.setVisible(false);
@@ -114,7 +121,9 @@ public class FrameView extends VerticalLayout {
         public void buttonClick(Button.ClickEvent event) {
             if (components.size() > 0) {
                 state++;
-                if (state == components.size()) state = 0;
+                if (state == components.size()) {
+                    state = 0;
+                }
                 setContent(components.get(state));
             }
         }
@@ -126,7 +135,9 @@ public class FrameView extends VerticalLayout {
         public void buttonClick(Button.ClickEvent event) {
             if (components.size() > 0) {
                 state--;
-                if (state < 0) state = components.size() - 1;
+                if (state < 0) {
+                    state = components.size() - 1;
+                }
                 setContent(components.get(state));
             }
         }

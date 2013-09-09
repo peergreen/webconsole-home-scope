@@ -50,7 +50,7 @@ public class PeergreenNewsFeedFrame extends Table {
         Rss rss = null;
         rss = rssService.parse(new URL(PEERGREEN_RSS_FLOW_URL));
         int i = 0;
-        for(final FeedMessage feedMessage : rss.getItems()) {
+        for (final FeedMessage feedMessage : rss.getItems()) {
             Button news = new NativeButton(feedMessage.getTitle());
             news.addStyleName("link");
             news.addClickListener(new Button.ClickListener() {
@@ -68,6 +68,7 @@ public class PeergreenNewsFeedFrame extends Table {
 
     /**
      * News popup
+     *
      * @param feedMessage
      * @return
      */

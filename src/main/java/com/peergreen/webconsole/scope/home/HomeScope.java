@@ -16,6 +16,7 @@ import java.util.Map;
 
 /**
  * Home scope
+ *
  * @author Mohammed Boukada
  */
 @Extension
