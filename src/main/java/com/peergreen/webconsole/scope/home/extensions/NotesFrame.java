@@ -8,7 +8,7 @@ import com.vaadin.ui.TextArea;
  * @author Mohammed Boukada
  */
 @Extension
-@ExtensionPoint("com.peergreen.webconsole.scope.home.HomeScope.top.right")
+@ExtensionPoint("com.peergreen.webconsole.scope.home.HomeScope.bottom.left")
 public class NotesFrame extends TextArea {
 
     public NotesFrame() {
