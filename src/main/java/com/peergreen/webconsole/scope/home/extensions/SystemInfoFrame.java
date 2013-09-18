@@ -61,6 +61,6 @@ public class SystemInfoFrame extends Table {
         addItem(new Object[]{"Virtual Machine", format("%s - version %s", getProperty("java.vm.name"), getProperty("java.vm.version"))}, 1);
         addItem(new Object[]{"JVM used memory", format("%d / %d MB", (getRuntime().totalMemory() - getRuntime().freeMemory()) / MB, getRuntime().totalMemory() / MB)}, 2);
         addItem(new Object[]{"JVM max memory", format("%d MB", getRuntime().maxMemory() / MB)}, 3);
-        addItem(new Object[]{"JVM Available processors", format("%d core(s)", getRuntime().availableProcessors() / MB)}, 4);
+        addItem(new Object[]{"JVM Available processors", format("%d core(s)", getRuntime().availableProcessors())}, 4);
     }
 }
