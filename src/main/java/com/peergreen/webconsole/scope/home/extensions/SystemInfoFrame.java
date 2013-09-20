@@ -26,7 +26,7 @@ import com.vaadin.ui.Table;
  * @author Mohammed Boukada
  */
 @Extension
-@ExtensionPoint("com.peergreen.webconsole.scope.home.HomeScope.top.right")
+@ExtensionPoint("com.peergreen.webconsole.scope.home.HomeScope.bottom.left")
 @Frame("Host properties")
 public class SystemInfoFrame extends Table {
 
