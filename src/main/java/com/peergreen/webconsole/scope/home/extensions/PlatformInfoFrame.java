@@ -19,7 +19,7 @@ import com.vaadin.ui.Table;
  * @author Mohammed Boukada
  */
 @Extension
-@ExtensionPoint("com.peergreen.webconsole.scope.home.HomeScope.bottom.right")
+@ExtensionPoint("com.peergreen.webconsole.scope.home.HomeScope.bottom.left")
 @Frame("Platform information")
 public class PlatformInfoFrame extends Table {
 

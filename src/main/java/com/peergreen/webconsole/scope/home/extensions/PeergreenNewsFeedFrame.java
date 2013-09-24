@@ -11,6 +11,10 @@
 
 package com.peergreen.webconsole.scope.home.extensions;
 
+import javax.annotation.PostConstruct;
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import com.peergreen.newsfeed.FeedMessage;
 import com.peergreen.newsfeed.Rss;
 import com.peergreen.newsfeed.RssService;
@@ -29,15 +33,11 @@ import com.vaadin.ui.Table;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Window;
 
-import javax.annotation.PostConstruct;
-import java.net.MalformedURLException;
-import java.net.URL;
-
 /**
  * @author Mohammed Boukada
  */
 @Extension
-@ExtensionPoint("com.peergreen.webconsole.scope.home.HomeScope.top.left")
+@ExtensionPoint("com.peergreen.webconsole.scope.home.HomeScope.bottom.right")
 @Frame("Peergreen News")
 public class PeergreenNewsFeedFrame extends Table {
 
