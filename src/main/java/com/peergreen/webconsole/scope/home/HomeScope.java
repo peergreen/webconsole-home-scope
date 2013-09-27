@@ -11,6 +11,8 @@
 
 package com.peergreen.webconsole.scope.home;
 
+import java.util.Map;
+
 import com.peergreen.webconsole.Extension;
 import com.peergreen.webconsole.ExtensionPoint;
 import com.peergreen.webconsole.Link;
@@ -23,8 +25,6 @@ import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
-import java.util.Map;
-
 /**
  * Home scope
  *
@@ -32,7 +32,7 @@ import java.util.Map;
  */
 @Extension
 @ExtensionPoint("com.peergreen.webconsole.scope")
-@Scope("home")
+@Scope(value = "home", iconClass = "icon-home")
 public class HomeScope extends VerticalLayout {
 
     private final static String TOP_LEFT = "top.left";
