@@ -20,13 +20,13 @@ import com.vaadin.ui.Table;
  */
 @Extension
 @ExtensionPoint("com.peergreen.webconsole.scope.home.HomeScope.bottom.left")
-@Frame("Platform information")
-public class PlatformInfoFrame extends Table {
+@Frame("Server information")
+public class ServerInfoFrame extends Table {
 
     @Inject
     private PlatformInfo platformInfo;
 
-    public PlatformInfoFrame() {
+    public ServerInfoFrame() {
         addContainerProperty("Name", String.class, null);
         addContainerProperty("Value", String.class, null);
         setWidth("100%");
@@ -50,7 +50,7 @@ public class PlatformInfoFrame extends Table {
 
     private void showInfos() {
         removeAllItems();
-        addItem(new Object[]{"Platform Id", format("%s", platformInfo.getId())}, 0);
+        addItem(new Object[]{"Server Id", format("%s", platformInfo.getId())}, 0);
         addItem(new Object[]{"Started", format("%tc%n", platformInfo.getStartDate())}, 1);
         addItem(new Object[]{"Boot time", format("%s%n", printDuration(platformInfo.getStartupTime()))}, 2);
         addItem(new Object[]{"Uptime", format("%s%n", printDuration(platformInfo.getUptime()))}, 3);
