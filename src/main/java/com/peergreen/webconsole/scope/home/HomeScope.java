@@ -32,7 +32,7 @@ import com.vaadin.ui.VerticalLayout;
  */
 @Extension
 @ExtensionPoint("com.peergreen.webconsole.scope")
-@Scope(value = "home", iconClass = "icon-home")
+@Scope(name = "home", domains = "peergreen.admin", iconClass = "icon-home")
 public class HomeScope extends VerticalLayout {
 
     private final static String TOP_LEFT = "top.left";
